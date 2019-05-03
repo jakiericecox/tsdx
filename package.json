@@ -1,12 +1,12 @@
 {
   "name": "tsdx-sass",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0",
   "author": "Jakie W. Rice",
   "description": "Fork of Jared Palmer's TSDX zero config library build that add Sass compat",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jaredpalmer/tsdx.git"
+    "url": "https://github.com/jakiericecox/tsdx-sass"
   },
   "keywords": [
     "react",
