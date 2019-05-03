@@ -1,10 +1,4 @@
-import {
-  safeVariableName,
-  safePackageName,
-  resolveApp,
-  removeScope,
-  external,
-} from './utils';
+import { safeVariableName, safePackageName, external } from './utils';
 import { paths } from './constants';
 import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 import { terser } from 'rollup-plugin-terser';
@@ -16,6 +10,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import typescript from 'rollup-plugin-typescript2';
 import shebangPlugin from '@jaredpalmer/rollup-plugin-preserve-shebang';
+import scss from 'rollup-plugin-scss';
 
 const replacements = [{ original: 'lodash', replacement: 'lodash-es' }];
 
@@ -130,6 +125,9 @@ export function createRollupConfig(
         }),
       shebangPlugin({
         shebang,
+      }),
+      scss({
+        output: 'dist/styles.css',
       }),
     ],
   };
