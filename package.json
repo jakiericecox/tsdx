@@ -1,8 +1,8 @@
 {
-  "name": "tsdx",
-  "version": "0.5.5",
-  "author": "Jared Palmer <jared@palmer.net>",
-  "description": "Zero-config TypeScript package development",
+  "name": "tsdx-sass",
+  "version": "1.0.0-alpha.0",
+  "author": "Jakie W. Rice",
+  "description": "Fork of Jared Palmer's TSDX zero config library build that add Sass compat",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -12,11 +12,9 @@
     "react",
     "typescript",
     "bundle",
-    "rollup"
+    "rollup",
+    "sass"
   ],
-  "bugs": {
-    "url": "https://github.com/jaredpalmer/tsdx/issues"
-  },
   "bin": {
     "tsdx": "./dist/index.js"
   },
@@ -79,6 +77,7 @@
     "prettier": "^1.17.0",
     "pretty-quick": "^1.10.0",
     "ps-tree": "^1.2.0",
+    "rollup-plugin-scss": "^1.0.1",
     "shelljs": "^0.8.3",
     "tslint": "^5.16.0",
     "tslint-config-palmerhq": "^1.0.2",
