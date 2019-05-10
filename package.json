@@ -1,6 +1,6 @@
 {
   "name": "tsdx-sass",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Jakie W. Rice",
   "description": "Fork of Jared Palmer's TSDX zero config library build that add Sass compat",
   "license": "MIT",

@@ -89,7 +89,7 @@ export function createRollupConfig(
       json(),
       typescript({
         typescript: require('typescript'),
-        cacheRoot: `./${require('temp-dir')}/.rts2_cache_${format}`,
+        cacheRoot: `.rts2_cache_${format}`,
         tsconfigDefaults: {
           compilerOptions: {
             sourceMap: true,
