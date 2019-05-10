@@ -1,6 +1,6 @@
+import { DEFAULT_EXTENSIONS } from '@babel/core';
 import { safeVariableName, safePackageName, external } from './utils';
 import { paths } from './constants';
-import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 import { terser } from 'rollup-plugin-terser';
 import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
@@ -16,10 +16,11 @@ const replacements = [{ original: 'lodash', replacement: 'lodash-es' }];
 
 const babelOptions = {
   exclude: /node_modules/,
+  extensions: [...DEFAULT_EXTENSIONS, 'ts', 'tsx'],
   plugins: [
-    require.resolve('babel-plugin-annotate-pure-calls'),
-    require.resolve('babel-plugin-dev-expression'),
-    [require.resolve('babel-plugin-transform-rename-import'), { replacements }],
+    'annotate-pure-calls',
+    'dev-expression',
+    ['transform-rename-import', { replacements }],
   ],
 };
 
@@ -107,9 +108,9 @@ export function createRollupConfig(
         'process.env.NODE_ENV': JSON.stringify(env),
       }),
       sourceMaps(),
-      sizeSnapshot({
-        printInfo: false,
-      }),
+      // sizeSnapshot({
+      //   printInfo: false,
+      // }),
       env === 'production' &&
         terser({
           sourcemap: true,
